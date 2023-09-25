@@ -9,6 +9,8 @@
 
   imports = [
     ./helix/mod.nix
+    ./kitty/mod.nix
+    ./hyprland/mod.nix
   ];
 
   programs.home-manager.enable = true;
@@ -22,7 +24,7 @@
     };
   };
 
-
   home.packages = with pkgs; [
+    rustup
   ];
 }

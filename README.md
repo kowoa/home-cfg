@@ -1,5 +1,8 @@
 # Home Directory Configuration
 
+Any package installed here with `home.packages = [...]` must be non-graphical.
+Graphical packages should be installed through the OS's package manager.
+
 ## Notes
 
 To add channels:

@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+time=`date +%Y-%m-%d-%H-%M-%S`
+destdir="$HOME/screenshots"
+file="screenshot-${time}-${RANDOM}.png"
+
+notify_view () {
+  dunstify "SCREENSHOT" "Screenshot saved:\n$destdir/$file"
+}
+
+shotall () {
+  cd ${destdir} && grim - | tee "$file" | wl-copy
+  notify_view
+}
+
+shotwin () {
+	w_pos=`hyprctl activewindow | grep 'at:' | cut -d':' -f2 | tr -d ' ' | tail -n1`
+	w_size=`hyprctl activewindow | grep 'size:' | cut -d':' -f2 | tr -d ' ' | tail -n1 | sed s/,/x/g`
+	cd ${destdir} && grim -g "$w_pos $w_size" - | tee "$file" | wl-copy
+  notify_view
+}
+
+shotarea () {
+	cd ${destdir} && grim -g "$(slurp -b 20262CCC -c B4A1DBff -s B4A1DB0D -w 2)" - | tee "$file" | wl-copy
+  notify_view
+}
+
+if [[ ! -d "$destdir" ]]; then
+  mkdir -p "$destdir"
+fi
+
+if [[ "$1" == "--all" ]]; then
+	shotall
+elif [[ "$1" == "--win" ]]; then
+	shotwin
+elif [[ "$1" == "--area" ]]; then
+	shotarea
+else
+	echo -e "Available Options : --all --win --area"
+fi
+
+exit 0

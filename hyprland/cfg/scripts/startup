@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# This script is responsible for autostarting programs on Hyprland startup
+# This script should be executed in `hyprland.conf`
+# NOTE: This script should NOT set any environment variables. That should be
+#   already handled by the `starthl` script
+
+# Notification daemon (dunst)
+#dunst -conf "$HOME/.config/hypr/dunst/dunstrc" --startup_notification "true" &
+
+# Audio (pipewire, wireplumber, pipewire-pulse)
+#gentoo-pipewire-launcher restart &
+
+# Wallpaper
+#hyprpaper &
