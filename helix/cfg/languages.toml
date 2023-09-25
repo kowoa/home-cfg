@@ -1,0 +1,54 @@
+[[language]]
+name = "rust"
+auto-format = false
+
+[[language]]
+name = "glsl"
+scope = "source.glsl"
+file-types = ["glsl", "vert", "tesc", "tese", "geom", "frag", "comp", "gdshader"]
+roots = []
+comment-token = "//"
+indent = { tab-width = 4, unit = "    " }
+injection-regex = "glsl"
+language-server = { command = "glslls", args = ["--stdin"] }
+
+[[language]]
+name = "lua"
+auto-format = true
+
+[[language]]
+name = "c-sharp"
+language-server = { command = "csharp-ls" }
+
+[[language]]
+name = "bash"
+file-types = [
+  "sh",
+  "bash",
+  "zsh",
+  ".bash_login",
+  ".bash_logout",
+  ".bash_profile",
+  ".bashrc",
+  ".profile",
+  ".zshenv",
+  "zshenv",
+  ".zlogin",
+  "zlogin",
+  ".zlogout",
+  "zlogout",
+  ".zprofile",
+  "zprofile",
+  ".zshrc",
+  "zshrc",
+  ".zimrc",
+  "APKBUILD",
+  "PKGBUILD",
+  "eclass",
+  "ebuild",
+  "bazelrc",
+  ".bash_aliases",
+  "Renviron",
+  ".Renviron",
+  "conf"
+]

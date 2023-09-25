@@ -10,3 +10,7 @@ To add channels:
 Ways use an unstable package with `nix-shell`:
 - `nix-shell -p '(import <nixpkgs-unstable> {}).PACKAGENAME'`
 - `nix-shell -p PACKAGENAME -I nixpkgs=channel:nixos-CHANNELVERSION`
+
+## Arch Linux Dependencies
+
+- `gnome-keyring libsecret` for storing passwords
