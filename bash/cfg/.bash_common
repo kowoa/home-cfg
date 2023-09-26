@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# Test for an interactive shell.  There is no need to set anything
+# past this point for scp and rcp, and it's important to refrain from
+# outputting anything in those cases.
+if [[ $- != *i* ]]; then
+	# Shell is non-interactive.  Be done now!
+	return
+fi
+
+# Runtime directory
+if test -z "$XDG_RUNTIME_DIR"; then
+  export XDG_RUNTIME_DIR=$(mktemp -d /tmp/$(id -u)-runtime-dir.XXX)
+fi
+
+export EDITOR=hx
+# sudoedit or sudo -e
+export SUDO_EDITOR=hx
+
+# Custom binaries (prioritize over portage installed ones)
+#export PATH="$HOME/bin:$PATH"
+
+# Node Version Manager
+#export NVM_DIR="$HOME/.nvm"
+##[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+# NPM
+#export NPM_PACKAGES="$HOME/.npm-packages"
+#mkdir -p $NPM_PACKAGES
+#export PATH="$NPM_PACKAGES/bin:$PATH" # User-installed node tools
+#export MANPATH="$NPM_PACKAGES/share/man:"
+#export NODE_PATH="$NPM_PACKAGES/lib64/node_modules:$NODE_PATH"
+
+# Rust
+#export PATH="$HOME/.cargo/bin:$PATH"
+#export PATH="$(dirname $(rustup which rustc)):$PATH" # Prefer rustup installation
+
+# .NET
+#export DOTNET_ROOT="$HOME/.dotnet"
+#export PATH="$HOME/.dotnet:$PATH"
+#export PATH="$HOME/.dotnet/tools:$PATH"
+
+# Solve issue with some broken QT apps
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+
+# Aliases
+source "$BASH_CONFIG_DIR/.bash_aliases"
