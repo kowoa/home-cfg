@@ -7,6 +7,7 @@
     bat
     zoxide
     neofetch
+    ripgrep
   ];
 
   xdg.configFile."bash" = {
