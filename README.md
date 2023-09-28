@@ -14,6 +14,10 @@ Ways use an unstable package with `nix-shell`:
 - `nix-shell -p '(import <nixpkgs-unstable> {}).PACKAGENAME'`
 - `nix-shell -p PACKAGENAME -I nixpkgs=channel:nixos-CHANNELVERSION`
 
+Misc:
+- The `${xdg.configHome}/bash/aliases` directory contains files containing aliases.
+  Whenever you want to add an alias for a specific application, add a file here.
+
 ## Arch Linux Dependencies
 
 - `gnome-keyring libsecret` for storing passwords
