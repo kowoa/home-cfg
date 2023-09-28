@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
 
-alias starthl="$HOME/.config/hypr/starthl"
 #alias create-loopback="$HOME/scripts/create-loopback"
 #alias delete-loopback="$HOME/scripts/delete-loopback"
 #alias http-server="python3 -m http.server -d ."
 #alias pyvenv=". $HOME/pyvenv/bin/activate"
-alias icat="kitty +kitten icat"
-alias ssh="kitty +kitten ssh"
 ## This solves the issue where nix package doesn't appear in PATH
 #alias nix-shell="nix-shell --command \"exec $SHELL\""
 #
