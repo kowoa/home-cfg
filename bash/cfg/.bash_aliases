@@ -4,6 +4,7 @@ alias starthl="$HOME/.config/hypr/starthl"
 #alias http-server="python3 -m http.server -d ."
 #alias pyvenv=". $HOME/pyvenv/bin/activate"
 alias icat="kitty +kitten icat"
+alias ssh="kitty +kitten ssh"
 #
 ## This lazy-loads nvm to reduce startup times
 #alias nvm="unalias nvm; [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"; nvm $@"
