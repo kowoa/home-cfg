@@ -2,7 +2,6 @@
 #
 # This file is sourced by non-login shells
 
-source "$BASH_CONFIG_DIR/.bash_common"
 
 #-------------------------------------------------------------------------------
 # IMPORTANT: Edit this variable to change the default shell

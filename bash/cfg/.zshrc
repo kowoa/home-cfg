@@ -15,7 +15,9 @@ source "$HOME/.zsh_plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
 source "$HOME/.zsh_plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$HOME/.zsh_plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 
-eval "$(starship init zsh)"
+if command -v starship &> /dev/null; then
+  eval "$(starship init zsh)"
+fi
 
 neofetch
 
@@ -31,5 +33,3 @@ setopt EXTENDED_HISTORY
 if command -v zoxide &> /dev/null; then
   eval "$(zoxide init zsh)"
 fi
-
-source "$BASH_CONFIG_DIR/.bash_aliases"
