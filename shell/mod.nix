@@ -27,6 +27,10 @@
       source = ./nushell-cfg;
       target = "nushell";
     };
+    "starship" = {
+      source = ./starship.toml;
+      target = "starship.toml";
+    };
   };
 
   home.file = with config; {
