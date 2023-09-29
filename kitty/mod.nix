@@ -10,6 +10,7 @@
     text = ''
       alias icat="kitty +kitten icat"
       alias ssh="kitty +kitten ssh"
+      alias list-fonts="kitty +list-fonts"
     '';
   };
 }
