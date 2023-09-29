@@ -30,11 +30,9 @@ display-inlay-hints = true
 
 [editor.whitespace.render]
 tab = "all"
-newline = "all"
 
 [editor.whitespace.characters]
 tab = "→"
-newline = "⏎"
 
 [editor.indent-guides]
 render = true

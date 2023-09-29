@@ -29,5 +29,6 @@
   home.packages = with pkgs; [
     rustup
     btop
+    neovim
   ];
 }
