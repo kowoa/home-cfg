@@ -11,7 +11,7 @@
     ./helix/mod.nix
     ./kitty/mod.nix
     ./hyprland/mod.nix
-    ./bash/mod.nix
+    ./shell/mod.nix
   ];
 
   programs.home-manager.enable = true;

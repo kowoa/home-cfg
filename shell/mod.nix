@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     bash
     zsh
+    nushell
     starship
     unstable.eza
     bat
@@ -10,10 +11,22 @@
     ripgrep
   ];
 
-  xdg.configFile."bash" = {
-    recursive = true;
-    source = ./cfg;
-    target = "bash";
+  xdg.configFile = {
+    "bash" = {
+      recursive = true;
+      source = ./bash-cfg;
+      target = "bash";
+    };
+    "zsh" = {
+      recursive = true;
+      source = ./zsh-cfg;
+      target = "zsh";
+    };
+    "nushell" = {
+      recursive = true;
+      source = ./nushell-cfg;
+      target = "nushell";
+    };
   };
 
   home.file = with config; {
@@ -61,7 +74,7 @@
       fi
       unsetopt dotglob
 
-      source ${xdg.configHome}/bash/.zshrc
+      source ${xdg.configHome}/zsh/.zshrc
     '';
   };
 }
