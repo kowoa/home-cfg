@@ -22,6 +22,7 @@
     extraConfig = {
       init.defaultBranch = "main";
       credential.helper = "/usr/lib/git-core/git-credential-libsecret";
+      http.postBuffer = 157286400;
     };
   };
 
