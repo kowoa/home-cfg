@@ -52,3 +52,4 @@ file-types = [
   ".Renviron",
   "conf"
 ]
+shebangs = ["sh", "bash", "dash", "zsh", "nix-shell"]
