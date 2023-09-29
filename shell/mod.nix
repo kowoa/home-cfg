@@ -9,6 +9,7 @@
     zoxide
     neofetch
     ripgrep
+    fd
   ];
 
   xdg.configFile = {
