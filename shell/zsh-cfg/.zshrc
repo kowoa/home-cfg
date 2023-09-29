@@ -1,13 +1,13 @@
 if [[ ! -d "$HOME/.zsh_plugins/zsh-autosuggestions" ]]; then
-  git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh_plugins/zsh-autosuggestions
+  git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh_plugins/zsh-autosuggestions
 fi
 
 if [[ ! -d "$HOME/.zsh_plugins/zsh-autocomplete" ]]; then
-  git clone https://github.com/marlonrichert/zsh-autocomplete.git ~/.zsh_plugins/zsh-autocomplete
+  git clone --depth 1 https://github.com/marlonrichert/zsh-autocomplete.git ~/.zsh_plugins/zsh-autocomplete
 fi
 
 if [[ ! -d "$HOME/.zsh_plugins/fast-syntax-highlighting" ]]; then
-  git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ~/.zsh_plugins/fast-syntax-highlighting
+  git clone --depth 1 https://github.com/zdharma-continuum/fast-syntax-highlighting.git ~/.zsh_plugins/fast-syntax-highlighting
 fi
 
 # ZSH Plugins
