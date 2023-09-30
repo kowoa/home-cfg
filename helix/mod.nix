@@ -5,6 +5,7 @@
     nodePackages_latest.vscode-css-languageserver-bin
     nodePackages_latest.vscode-html-languageserver-bin
     unstable.csharp-ls
+    cmake-language-server
   ];
 
   xdg.configFile."helix" = {
