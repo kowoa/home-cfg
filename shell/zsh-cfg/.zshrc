@@ -15,12 +15,6 @@ source "$HOME/.zsh_plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
 source "$HOME/.zsh_plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$HOME/.zsh_plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 
-if command -v starship &> /dev/null; then
-  eval "$(starship init zsh)"
-fi
-
-neofetch
-
 # Persist history across sessions
 setopt APPEND_HISTORY
 setopt SHARE_HISTORY
@@ -30,6 +24,21 @@ HISTSIZE=999
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt EXTENDED_HISTORY
 
+# Initialize starship prompt
+if command -v starship &> /dev/null; then
+  eval "$(starship init zsh)"
+fi
+
+# Initialize zoxide (replaces `cd`)
 if command -v zoxide &> /dev/null; then
   eval "$(zoxide init zsh)"
+fi
+
+# Autostart zellij
+if command -v zellij &> /dev/null; then
+  eval "$(zellij setup --generate-auto-start zsh)"
+fi
+
+if command -v pfetch &> /dev/null; then
+  pfetch
 fi

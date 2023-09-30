@@ -1,18 +1,27 @@
 {config, pkgs, unstable, ...}: {
   home.packages = with pkgs; [
+    # Shells
     bash
     zsh
     nushell
 
+    # Multiplexer
     zellij
 
+    # Prompt
     starship
+
+    # Utils
     unstable.eza
-    bat
     zoxide
-    neofetch
+    bat
     ripgrep
     fd
+    btop
+
+    # Extra
+    neofetch
+    unstable.pfetch-rs
   ];
 
   xdg.configFile = {
