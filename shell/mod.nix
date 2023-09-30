@@ -3,6 +3,9 @@
     bash
     zsh
     nushell
+
+    zellij
+
     starship
     unstable.eza
     bat
