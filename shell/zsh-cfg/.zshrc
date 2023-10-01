@@ -35,10 +35,13 @@ if command -v zoxide &> /dev/null; then
 fi
 
 # Autostart zellij
-if command -v zellij &> /dev/null; then
-  if [[ $TERM_PROGRAM != "vscode" ]]; then
-    eval "$(zellij setup --generate-auto-start zsh)"
-  fi
+if [[
+  -n $(command -v zellij) &&
+  ! -v ZELLIJ &&
+  $TERM_PROGRAM != "vscode"
+]]; then
+  # Attach to the oldest session (last in the list)
+  zellij attach --create $(zellij ls | tail -n 1)
 fi
 
 if command -v pfetch &> /dev/null; then
