@@ -87,6 +87,7 @@
       fi
       shopt -u dotglob
 
+      export PATH="$HOME/bin:$PATH" # Custom scripts and binaries
       source ${xdg.configHome}/bash/.bash_profile
     '';
     ".bashrc".text = ''
@@ -102,6 +103,7 @@
       fi
       shopt -u dotglob
 
+      export PATH="$HOME/bin:$PATH" # Custom scripts and binaries
       source ${xdg.configHome}/bash/.bashrc
     '';
     ".bash_logout".text = "source ${xdg.configHome}/bash/.bash_logout";

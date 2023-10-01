@@ -10,6 +10,6 @@
     enable = true;
     recursive = true;
     source = ./scripts;
-    target = "scripts";
+    target = "bin";
   };
 }
