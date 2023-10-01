@@ -17,14 +17,21 @@
     home-manager,
     ...
   }: let
-    system = "x86_64-linux";
     pkgs = import nixpkgs {
-      inherit system;
+      system = "x86_64-linux";
       config.allowUnfree = true;
     };
     unstable = import nixpkgs-unstable {
-      inherit system;
+      system = "x86_64-linux";
       config.allowUnfree = true;
+    };
+
+    macos-pkgs = import nixpkgs {
+      system = "x86_64-darwin";
+      config.allowUnfree = true;
+    };
+    macos-unstable = import nixpkgs-unstable {
+      system = "x86_64-darwin";
     };
   in {
     homeConfigurations = {
@@ -32,6 +39,11 @@
         inherit pkgs;
         extraSpecialArgs = {inherit unstable;};
         modules = [./home.nix];
+      };
+      "kodah@kdhmacbp" = home-manager.lib.homeManagerConfiguration {
+        pkgs = macos-pkgs;
+        extraSpecialArgs = {unstable = macos-unstable;};
+        modules = [./macos/home.nix];
       };
     };
   };

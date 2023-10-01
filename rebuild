@@ -3,4 +3,11 @@
 
 # NOTE: The version of home-manager here should match the version defined in flake.nix.
 #   This should already be ensured with the `-I nixpkgs=channel:nixos-23.05` flag in the shebang.
-home-manager switch --flake .#kowoa@kdhpc --experimental-features 'nix-command flakes'
+os=$(uname)
+if [ "$os" == "Linux" ]; then
+  echo "Rebuilding for Linux ..."
+  home-manager switch --flake .#kowoa@kdhpc --experimental-features 'nix-command flakes'
+elif [ "$os" == "Darwin" ]; then
+  echo "Rebuilding for Darwin ..."
+  home-manager switch --flake .#kodah@kdhmacbp --experimental-features 'nix-command flakes'
+fi
