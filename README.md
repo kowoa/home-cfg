@@ -3,6 +3,12 @@
 Any package installed here with `home.packages = [...]` must be non-graphical.
 Graphical packages should be installed through the OS's package manager.
 
+## Getting Started
+
+- `git clone https://github.com/kowoa/home-cfg.git ~/.home-cfg`
+- `cd ~/.home-cfg`
+- `./rebuild`
+
 ## Notes
 
 - The `${xdg.configHome}/bash/aliases` directory contains files containing aliases.
