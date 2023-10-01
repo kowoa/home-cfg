@@ -1,4 +1,8 @@
 {config, pkgs, unstable, ...}: {
+  imports = [
+    ./fish.nix
+  ];
+
   home.packages = with pkgs; [
     # Shells
     bash
@@ -18,6 +22,7 @@
     ripgrep
     fd
     btop
+    delta
 
     # Extra
     neofetch
