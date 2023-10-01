@@ -36,7 +36,9 @@ fi
 
 # Autostart zellij
 if command -v zellij &> /dev/null; then
-  eval "$(zellij setup --generate-auto-start zsh)"
+  if [[ $TERM_PROGRAM != "vscode" ]]; then
+    eval "$(zellij setup --generate-auto-start zsh)"
+  fi
 fi
 
 if command -v pfetch &> /dev/null; then
