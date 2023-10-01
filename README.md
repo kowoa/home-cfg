@@ -9,6 +9,24 @@ Graphical packages should be installed through the OS's package manager.
 - `cd ~/.home-cfg`
 - `./rebuild`
 
+## Troubleshooting (MacOS)
+
+To fix this error that occurs when running `./rebuild`:
+```
+Could not find suitable profile directory, tried /Users/kodah/.local/state/home-manager/profiles and /nix/var/nix/profiles/per-user/kodah
+```
+- `nix-channel --update`
+- `./rebuild`
+
+To fix this error that occurs when running `./rebuild`:
+```
+installing 'home-manager-path'
+error: opening lock file '/nix/var/nix/profiles/per-user/kodah/profile.lock': No such file or directory
+```
+- `sudo mkdir /nix/var/nix/profiles/per-user/kodah`
+- `sudo chown kodah /nix/var/nix/profiles/per-user/kodah`
+- `./rebuild`
+
 ## Notes
 
 - The `${xdg.configHome}/bash/aliases` directory contains files containing aliases.
