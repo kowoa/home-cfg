@@ -4,7 +4,7 @@
     nodePackages_latest.bash-language-server
     nodePackages_latest.vscode-css-languageserver-bin
     nodePackages_latest.vscode-html-languageserver-bin
-    unstable.csharp-ls
+    #unstable.csharp-ls # Doesn't work on macOS
     cmake-language-server
   ];
 

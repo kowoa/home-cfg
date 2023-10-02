@@ -7,6 +7,11 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   imports = [
+    ./helix/mod.nix
+    ./kitty/mod.nix
+    ./shell/mod.nix
+    ./misc/mod.nix
+    ./zellij/mod.nix
   ];
 
   programs.home-manager.enable = true;
