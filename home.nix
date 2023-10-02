@@ -29,6 +29,7 @@
 
   home.packages = with pkgs; [
     rustup
+    nodejs
     neovim
   ];
 }
