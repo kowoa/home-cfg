@@ -25,5 +25,11 @@
         pfetch
       end
     '';
+    shellAliases = {
+      nv = "nvim";
+      icat = "kitty +kitten icat";
+      ssh = "kitty +kitten ssh";
+      "list-fonts" = "kitty +list-fonts";
+    };
   };
 }
