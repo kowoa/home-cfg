@@ -43,7 +43,7 @@
       "kodah@kdhmacbp" = home-manager.lib.homeManagerConfiguration {
         pkgs = macos-pkgs;
         extraSpecialArgs = {unstable = macos-unstable;};
-        modules = [./macos/home.nix];
+        modules = [./macos-home.nix];
       };
     };
   };

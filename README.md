@@ -9,7 +9,7 @@ Graphical packages should be installed through the OS's package manager.
 - `cd ~/.home-cfg`
 - `./rebuild`
 
-## Troubleshooting (MacOS)
+## Troubleshooting (macOS)
 
 To fix this error that occurs when running `./rebuild`:
 ```
