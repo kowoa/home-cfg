@@ -13,6 +13,7 @@
     ./hyprland/mod.nix
     ./shell/mod.nix
     ./misc/mod.nix
+    ./zellij/mod.nix
   ];
 
   programs.home-manager.enable = true;

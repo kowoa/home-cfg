@@ -9,9 +9,6 @@
     zsh
     nushell
 
-    # Multiplexer
-    zellij
-
     # Prompt
     starship
 
@@ -61,11 +58,6 @@
       recursive = true;
       source = ./nushell-cfg;
       target = "nushell";
-    };
-    "zellij" = {
-      recursive = true;
-      source = ./zellij-cfg;
-      target = "zellij";
     };
     "starship" = {
       source = ./starship.toml;
