@@ -11,7 +11,7 @@
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
 
-      source "${config.home.homeDirectory}/bin/shell/source-aliases.fish"
+      source "${config.home.homeDirectory}/.init-scripts/source-aliases.fish"
 
       # Autostart zellij
       if begin;
@@ -26,6 +26,8 @@
       if command -q pfetch
         pfetch
       end
+
+      set -gx PATH $(python3 ${config.home.homeDirectory}/.init-scripts/clean-path.py)
     '';
   };
 }

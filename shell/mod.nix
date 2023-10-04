@@ -24,6 +24,9 @@
     # Extra
     neofetch
     unstable.pfetch-rs
+
+    # Dependencies
+    python3
   ];
 
   programs.git.extraConfig = {
@@ -75,35 +78,36 @@
   };
 
   home.file = {
-    "shell-scripts" = {
+    "init-scripts" = {
       recursive = true;
-      source = ./scripts;
-      target = "bin/shell";
+      source = ./init-scripts;
+      target = ".init-scripts";
     };
     ".bash_profile".text = ''
-      source "${config.home.homeDirectory}/bin/shell/source-aliases.bash"
+      source "${config.home.homeDirectory}/.init-scripts/source-aliases.bash"
 
       # Custom scripts and binaries
       for DIR in ${config.home.homeDirectory}/bin/*/; do
-        PATH="$DIR:$PATH"
+        export PATH="$DIR:$PATH"
       done
 
       source ${config.xdg.configHome}/bash/.bash_profile
     '';
     ".bashrc".text = ''
-      source "${config.home.homeDirectory}/bin/shell/source-aliases.bash"
+      source "${config.home.homeDirectory}/.init-scripts/source-aliases.bash"
 
       # Custom scripts and binaries
       for DIR in ${config.home.homeDirectory}/bin/*/; do
-        PATH="$DIR:$PATH"
+        export PATH="$DIR:$PATH"
       done
 
       source ${config.xdg.configHome}/bash/.bashrc
     '';
     ".bash_logout".text = "source ${config.xdg.configHome}/bash/.bash_logout";
     ".zshrc".text = ''
-      source "${config.home.homeDirectory}/bin/shell/source-aliases"
+      source "${config.home.homeDirectory}/.init-scripts/source-aliases.zsh"
       source ${config.xdg.configHome}/zsh/.zshrc
+      export PATH=$(python3 ${config.home.homeDirectory}/.init-scripts/clean-path.py)
     '';
   };
 }
