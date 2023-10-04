@@ -13,13 +13,15 @@
     starship
 
     # Utils
+    zoxide
     unstable.eza
     bat
     ripgrep
     fd
-    btop
+    procs
     delta
-    zoxide
+    btop
+    fzf
 
     # Extra
     neofetch
@@ -50,10 +52,14 @@
     "default-aliases" = {
       target = "shell-aliases/default";
       text = ''
+        alias cd="z"
         alias ls="eza"
         alias cat="bat"
         alias grep="rg"
+        alias find="fd"
+        alias ps="procs"
         alias nv="nvim"
+        alias fp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
       '';
     };
     "bash" = {

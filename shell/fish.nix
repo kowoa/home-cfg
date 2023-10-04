@@ -27,7 +27,11 @@
         pfetch
       end
 
+      # Clean PATH
       set -gx PATH $(python3 ${config.home.homeDirectory}/.init-scripts/clean-path.py)
+
+      # Init zoxide
+      zoxide init fish | source
     '';
   };
 }
