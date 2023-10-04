@@ -1,9 +1,15 @@
-{ pkgs, ... }: {
+{ pkgs, unstable, ... }: {
   home.packages = with pkgs; [
     fishPlugins.tide
     fishPlugins.sponge
     fishPlugins.z
     fishPlugins.done
+
+    # Utils
+    unstable.eza
+    bat
+    ripgrep
+    neovim
   ];
 
   programs.fish = {
@@ -26,6 +32,9 @@
       end
     '';
     shellAliases = {
+      ls = "eza";
+      cat = "bat";
+      grep = "rg";
       nv = "nvim";
       icat = "kitty +kitten icat";
       ssh = "kitty +kitten ssh";
