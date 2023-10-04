@@ -22,6 +22,7 @@
     delta
     btop
     fzf
+    tealdeer
 
     # Extra
     neofetch
@@ -52,7 +53,6 @@
     "default-aliases" = {
       target = "shell-aliases/default";
       text = ''
-        alias cd="z"
         alias ls="eza"
         alias cat="bat"
         alias grep="rg"
@@ -78,8 +78,13 @@
       target = "nushell";
     };
     "starship" = {
-      source = ./starship.toml;
+      source = ./starship-cfg/starship.toml;
       target = "starship.toml";
+    };
+    "tealdeer" = {
+      recursive = true;
+      source = ./tealdeer-cfg;
+      target = "tealdeer";
     };
   };
 

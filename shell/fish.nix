@@ -2,7 +2,6 @@
   home.packages = with pkgs; [
     fishPlugins.tide
     fishPlugins.sponge
-    fishPlugins.z
     fishPlugins.done
   ];
 
