@@ -14,12 +14,12 @@
 
     # Utils
     unstable.eza
-    zoxide
     bat
     ripgrep
     fd
     btop
     delta
+    zoxide
 
     # Extra
     neofetch
@@ -44,6 +44,14 @@
   };
 
   xdg.configFile = {
+    "default-aliases" = {
+      target = "shell-aliases/default";
+      text = ''
+        alias ls="eza"
+        alias cat="bat"
+        alias grep="rg"
+      '';
+    };
     "bash" = {
       recursive = true;
       source = ./bash-cfg;
@@ -65,54 +73,36 @@
     };
   };
 
-  home.file = with config; {
+  home.file = {
+    "shell-scripts" = {
+      recursive = true;
+      source = ./scripts;
+      target = "bin/shell";
+    };
     ".bash_profile".text = ''
-      BASH_ALIASES_DIR=${xdg.configHome}/bash/aliases
-      shopt -s dotglob
-      if [ -d "$BASH_ALIASES_DIR" ]; then
-        for FILE in "$BASH_ALIASES_DIR"/*; do
-          [ -r "$FILE" ] && . "$FILE"
-          if [ -f "$FILE" ] && [ -r "$FILE" ]; then
-            source "$FILE"
-          fi
-        done
-      fi
-      shopt -u dotglob
+      source "${config.home.homeDirectory}/bin/shell/source-aliases"
 
-      export PATH="$HOME/bin:$PATH" # Custom scripts and binaries
-      source ${xdg.configHome}/bash/.bash_profile
+      # Custom scripts and binaries
+      for DIR in ${config.home.homeDirectory}/bin/*/; do
+        PATH="$DIR:$PATH"
+      done
+
+      source ${config.xdg.configHome}/bash/.bash_profile
     '';
     ".bashrc".text = ''
-      BASH_ALIASES_DIR=${xdg.configHome}/bash/aliases
-      shopt -s dotglob
-      if [ -d "$BASH_ALIASES_DIR" ]; then
-        for FILE in "$BASH_ALIASES_DIR"/*; do
-          [ -r "$FILE" ] && . "$FILE"
-          if [ -f "$FILE" ] && [ -r "$FILE" ]; then
-            source "$FILE"
-          fi
-        done
-      fi
-      shopt -u dotglob
+      source "${config.home.homeDirectory}/bin/shell/source-aliases"
 
-      export PATH="$HOME/bin:$PATH" # Custom scripts and binaries
-      source ${xdg.configHome}/bash/.bashrc
+      # Custom scripts and binaries
+      for DIR in ${config.home.homeDirectory}/bin/*/; do
+        PATH="$DIR:$PATH"
+      done
+
+      source ${config.xdg.configHome}/bash/.bashrc
     '';
-    ".bash_logout".text = "source ${xdg.configHome}/bash/.bash_logout";
+    ".bash_logout".text = "source ${config.xdg.configHome}/bash/.bash_logout";
     ".zshrc".text = ''
-      BASH_ALIASES_DIR=${xdg.configHome}/bash/aliases
-      setopt dotglob
-      if [ -d "$BASH_ALIASES_DIR" ]; then
-        for FILE in "$BASH_ALIASES_DIR"/*; do
-          [ -r "$FILE" ] && . "$FILE"
-          if [ -f "$FILE" ] && [ -r "$FILE" ]; then
-            source "$FILE"
-          fi
-        done
-      fi
-      unsetopt dotglob
-
-      source ${xdg.configHome}/zsh/.zshrc
+      source "${config.home.homeDirectory}/bin/shell/source-aliases"
+      source ${config.xdg.configHome}/zsh/.zshrc
     '';
   };
 }

@@ -6,7 +6,7 @@
   };
 
   xdg.configFile."kitty_aliases" = {
-    target = "bash/aliases/.kitty";
+    target = "shell-aliases/kitty";
     text = ''
       alias icat="kitty +kitten icat"
       alias ssh="kitty +kitten ssh"

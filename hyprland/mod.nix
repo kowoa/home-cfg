@@ -1,15 +1,13 @@
 {config, pkgs, ...}: {
   xdg.configFile."hyprland" = {
-    enable = true;
     recursive = true;
     source = ./cfg;
     target = "hypr";
   };
 
-  home.file."scripts" = {
-    enable = true;
+  home.file."hyprland-scripts" = {
     recursive = true;
     source = ./scripts;
-    target = "bin";
+    target = "bin/hyprland";
   };
 }

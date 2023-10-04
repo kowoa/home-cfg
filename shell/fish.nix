@@ -1,21 +1,17 @@
-{ pkgs, unstable, ... }: {
+{ pkgs, unstable, config, ... }: {
   home.packages = with pkgs; [
     fishPlugins.tide
     fishPlugins.sponge
     fishPlugins.z
     fishPlugins.done
-
-    # Utils
-    unstable.eza
-    bat
-    ripgrep
-    neovim
   ];
 
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
+
+      bash "${config.home.homeDirectory}/bin/shell/source-aliases"
 
       # Autostart zellij
       if begin;
@@ -31,14 +27,5 @@
         pfetch
       end
     '';
-    shellAliases = {
-      ls = "eza";
-      cat = "bat";
-      grep = "rg";
-      nv = "nvim";
-      icat = "kitty +kitten icat";
-      ssh = "kitty +kitten ssh";
-      "list-fonts" = "kitty +list-fonts";
-    };
   };
 }

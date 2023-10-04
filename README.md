@@ -29,9 +29,10 @@ error: opening lock file '/nix/var/nix/profiles/per-user/kodah/profile.lock': No
 
 ## Notes
 
-- The `${xdg.configHome}/bash/aliases` directory contains files containing aliases.
+- The `~/.config/shell-aliases` directory contains files containing aliases.
   Whenever you want to add an alias for a specific application, add a file here.
-- To configure the fish prompt, run `tide configure`
+- The `~/bin/shell/source-aliases` scripts sources all files in `~/.config/shell-aliases`.
+- To configure the fish prompt, run `tide configure`.
 
 ## Nix Notes
 
