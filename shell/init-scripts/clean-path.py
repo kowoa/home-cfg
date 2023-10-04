@@ -1,7 +1,7 @@
 import os
     
 # grab $PATH
-path = os.environ['PATH'].split(':')
+path = os.environ['PATH'].split(os.pathsep)
 
 # normalize all paths
 path = map(os.path.normpath, path)
@@ -10,7 +10,7 @@ path = map(os.path.normpath, path)
 clean = dict.fromkeys(path)
 
 # combine back into one path
-clean_path = ':'.join(clean.keys())
+clean_path = (os.pathsep).join(clean.keys())
 
 # dump to stdout
 print(f"{clean_path}")
