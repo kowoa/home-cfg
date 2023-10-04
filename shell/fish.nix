@@ -11,7 +11,7 @@
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
 
-      bash "${config.home.homeDirectory}/bin/shell/source-aliases"
+      source "${config.home.homeDirectory}/bin/shell/source-aliases.fish"
 
       # Autostart zellij
       if begin;

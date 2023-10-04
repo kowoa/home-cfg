@@ -50,6 +50,7 @@
         alias ls="eza"
         alias cat="bat"
         alias grep="rg"
+        alias nv="nvim"
       '';
     };
     "bash" = {
@@ -80,7 +81,7 @@
       target = "bin/shell";
     };
     ".bash_profile".text = ''
-      source "${config.home.homeDirectory}/bin/shell/source-aliases"
+      source "${config.home.homeDirectory}/bin/shell/source-aliases.bash"
 
       # Custom scripts and binaries
       for DIR in ${config.home.homeDirectory}/bin/*/; do
@@ -90,7 +91,7 @@
       source ${config.xdg.configHome}/bash/.bash_profile
     '';
     ".bashrc".text = ''
-      source "${config.home.homeDirectory}/bin/shell/source-aliases"
+      source "${config.home.homeDirectory}/bin/shell/source-aliases.bash"
 
       # Custom scripts and binaries
       for DIR in ${config.home.homeDirectory}/bin/*/; do

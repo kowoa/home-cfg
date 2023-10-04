@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-ALIASES_DIR="$HOME/shell-aliases"
+ALIASES_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/shell-aliases"
 shopt -s dotglob
 if [ -d "$ALIASES_DIR" ]; then
 for FILE in "$ALIASES_DIR"/*; do
