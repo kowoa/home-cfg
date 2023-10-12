@@ -23,6 +23,7 @@
     btop
     fzf
     tealdeer
+    tree
 
     # Extra
     neofetch
