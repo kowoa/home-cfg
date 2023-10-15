@@ -9,6 +9,10 @@ if [[ $IN_NIX_SHELL && $(uname) == "Linux" ]]; then
   return
 fi
 
+# Set default editor
+export VISUAL=hx
+export EDITOR=hx
+
 # IMPORTANT: Edit this to change the desired shell
 exec fish
 
