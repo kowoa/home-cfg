@@ -24,6 +24,7 @@
     fzf
     tealdeer
     tree
+    gitoxide
 
     # Extra
     neofetch
