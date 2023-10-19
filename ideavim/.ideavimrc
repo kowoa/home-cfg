@@ -9,34 +9,70 @@ set surround
 set multiple-cursors
 
 let mapleader = " "
-map <leader>f <Action>(GotoFile)
-map <leader>a <Action>(ShowIntentionActions)
+noremap <leader>f <Action>(GotoFile)
+noremap <leader>a <Action>(ShowIntentionActions)
+noremap <leader>k K
+
+" Selecting entire lines
+nnoremap x 0v$
+nnoremap X $v0
+vnoremap x <esc>`>j$v0`<o
+vnoremap X <esc>`<k0v$`>o
+
+" Toggle visual mode
+noremap ; v
+
+" Entering insert mode
+vnoremap i vi
+vnoremap I v`<i
+vnoremap A v`>a
+
+" Flip cursor position inside selection
+vnoremap <A-;> o
+
+" Add new lines from visual mode
+vnoremap o vo
+vnoremap O vO
+
+" Repeat last action
+noremap <A-.> ;
+noremap <A-,> ,
+
+" Delete single character under cursor
+nnoremap dc x
+
+" Change single character under cursor
+nnoremap cc s
 
 " Goto mode
-map gh 0
-map gs ^
-map gl $
-map ge G
-map gn gt
-map gp gT
-map ]d <Action>(GotoNextError)
-map [d <Action>(GotoPreviousError)
+noremap gh 0
+noremap gs ^
+noremap gl $
+noremap ge G
+noremap gn gt
+noremap gp gT
+noremap ga <Action>(Switcher)
+noremap ]d <Action>(GotoNextError)
+noremap [d <Action>(GotoPreviousError)
 
 " Match mode
-map ms <Action>(SurroundWith)
-nmap mi vi
-nmap ma va
+noremap ms <Action>(SurroundWith)
+nnoremap mi vi
+nnoremap ma va
 
 " Select entire buffer
-nmap % ggvG$
-vmap % vggvG$
+nnoremap % ggvG$
+vnoremap % vggvG$
 
 " Search inside selection
-vmap s :s/
+vnoremap s :s/
 
 " Commenting
-map <C-c> <Action>(CommentByLineComment)
-map <leader><C-c> <Action>(CommentByBlockComment)
+noremap <C-c> <Action>(CommentByLineComment)
+noremap <leader><C-c> <Action>(CommentByBlockComment)
+
+" Undo
+noremap U <C-r>
 
 " Refresh config
-nmap <leader>\ :source ~/.ideavimrc
+nnoremap <leader>\ :source ~/.ideavimrc
