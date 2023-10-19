@@ -34,5 +34,9 @@ vmap % vggvG$
 " Search inside selection
 vmap s :s/
 
+" Commenting
+map <C-c> <Action>(CommentByLineComment)
+map <leader><C-c> <Action>(CommentByBlockComment)
+
 " Refresh config
 nmap <leader>\ :source ~/.ideavimrc
