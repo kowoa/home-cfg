@@ -1,0 +1,38 @@
+" Options
+set number relativenumber
+set idearefactormode=keep
+set ideajoin
+set incsearch
+
+" Plugins
+set surround
+set multiple-cursors
+
+let mapleader = " "
+map <leader>f <Action>(GotoFile)
+map <leader>a <Action>(ShowIntentionActions)
+
+" Goto mode
+map gh 0
+map gs ^
+map gl $
+map ge G
+map gn gt
+map gp gT
+map ]d <Action>(GotoNextError)
+map [d <Action>(GotoPreviousError)
+
+" Match mode
+map ms <Action>(SurroundWith)
+nmap mi vi
+nmap ma va
+
+" Select entire buffer
+nmap % ggvG$
+vmap % vggvG$
+
+" Search inside selection
+vmap s :s/
+
+" Refresh config
+nmap <leader>\ :source ~/.ideavimrc
