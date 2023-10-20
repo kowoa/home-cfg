@@ -29,4 +29,12 @@
     rustup
     neovim
   ];
+
+  # Config file for IdeaVim (JetBrains IDEs)
+  home.file = {
+    ".ideavimrc" = {
+      source = ./ideavim/.ideavimrc;
+      target = ".ideavimrc";
+    };
+  };
 }
