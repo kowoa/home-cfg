@@ -90,5 +90,8 @@ noremap <leader><C-c> <Action>(CommentByBlockComment)
 " Undo
 noremap U <C-r>
 
+" Windows
+noremap <leader>w <C-w>
+
 " Refresh config
 nnoremap <leader>\ :source ~/.ideavimrc
