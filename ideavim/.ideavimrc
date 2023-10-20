@@ -9,8 +9,8 @@ set surround
 set multiple-cursors
 
 let mapleader = " "
-noremap <leader>f <Action>(GotoFile)
-noremap <leader>a <Action>(ShowIntentionActions)
+noremap <leader>f :action GotoFile<CR>
+noremap <leader>a :action ShowIntentionActions<CR>
 noremap <leader>k K
 
 " Selecting entire lines
@@ -67,12 +67,12 @@ noremap gl $
 noremap ge G
 noremap gn gt
 noremap gp gT
-noremap ga <Action>(Switcher)
-noremap ]d <Action>(GotoNextError)
-noremap [d <Action>(GotoPreviousError)
+noremap ga :action Switcher<CR>
+noremap ]d :action GotoNextError<CR>
+noremap [d :action GotoPreviousError<CR>
 
 " Match mode
-noremap ms <Action>(SurroundWith)
+noremap ms :action SurroundWith<CR>
 nnoremap mi vi
 nnoremap ma va
 
@@ -84,8 +84,8 @@ vnoremap % vggvG$
 vnoremap s :s/
 
 " Commenting
-noremap <C-c> <Action>(CommentByLineComment)
-noremap <leader><C-c> <Action>(CommentByBlockComment)
+noremap <C-c> :action CommentByLineComment<CR>
+noremap <leader><C-c> :action CommentByBlockComment<CR>
 
 " Undo
 noremap U <C-r>
