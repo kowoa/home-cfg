@@ -16,9 +16,9 @@ language-server = { command = "glslls", args = ["--stdin"] }
 name = "lua"
 auto-format = true
 
-#[[language]]
-#name = "c-sharp"
-#language-server = { command = "csharp-ls" }
+[[language]]
+name = "c-sharp"
+language-server = { command = "csharp-ls" }
 
 [[language]]
 name = "bash"
