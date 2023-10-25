@@ -32,6 +32,7 @@
     };
     macos-unstable = import nixpkgs-unstable {
       system = "x86_64-darwin";
+      config.allowUnfree = true;
     };
   in {
     homeConfigurations = {
