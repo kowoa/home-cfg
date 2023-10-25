@@ -8,6 +8,7 @@
     #unstable.csharp-ls # Doesn't work on macOS
     omnisharp-roslyn
     cmake-language-server
+    nil # nix
   ];
 
   xdg.configFile."helix" = {
