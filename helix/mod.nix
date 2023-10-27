@@ -1,6 +1,6 @@
 {pkgs, unstable,...}: {
   home.packages = with pkgs; [
-    helix
+    unstable.helix
     nodePackages_latest.bash-language-server
     nodePackages_latest.vscode-css-languageserver-bin
     nodePackages_latest.vscode-html-languageserver-bin
