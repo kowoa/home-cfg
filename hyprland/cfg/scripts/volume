@@ -4,24 +4,18 @@ get_volume() {
   wpctl get-volume @DEFAULT_AUDIO_SINK@
 }
 
-inc_volume() {
-  wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+
+send_notification() {
   volume=$(get_volume)
   if [[ $volume == *"MUTED"* ]]; then
-    image=~/.config/hypr/dunst/assets/ui/volume_muted.svg
+    notify-send -t 100 "Volume Muted"
   else
-    image=~/.config/hypr/dunst/assets/ui/volume_up.png
+    notify-send -t 100 "$volume"
   fi
+}
 
-  # Send notification to dunst
-  dunstify \
-    -a "VOLUME" \
-    "$(wpctl get-volume @DEFAULT_AUDIO_SINK@)" \
-    -h int:value:"$volume" \
-    -i $image \
-    -r 2593 \
-    -u normal 
-    /
+inc_volume() {
+  wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+
+  send_notification
 
   # Play change volume sound
   canberra-gtk-play -i audio-volume-change -d "changevolume"
@@ -29,23 +23,7 @@ inc_volume() {
 
 dec_volume() {
   wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-
-  volume=$(get_volume)
-  volume=$(get_volume)
-  if [[ $volume == *"MUTED"* ]]; then
-    image=~/.config/hypr/dunst/assets/ui/volume_muted.svg
-  else
-    image=~/.config/hypr/dunst/assets/ui/volume_down.png
-  fi
-
-  # Send notification to dunst
-  dunstify \
-    -a "VOLUME" \
-    "$(wpctl get-volume @DEFAULT_AUDIO_SINK@)" \
-    -h int:value:"$volume" \
-    -i $image \
-    -r 2593 \
-    -u normal 
-    /
+  send_notification
 
   # Play change volume sound
   canberra-gtk-play -i audio-volume-change -d "changevolume"
@@ -53,22 +31,7 @@ dec_volume() {
 
 toggle_mute() {
   wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-
-  volume=$(get_volume)
-  if [[ $volume == *"MUTED"* ]]; then
-    image=~/.config/hypr/dunst/assets/ui/volume_muted.svg
-  else
-    image=~/.config/hypr/dunst/assets/ui/volume_up.png
-  fi
-
-  dunstify \
-    -a "VOLUME" \
-    "$(wpctl get-volume @DEFAULT_AUDIO_SINK@)" \
-    -h int:value:"$volume" \
-    -i $image \
-    -r 2593 \
-    -u normal 
-    /
+  send_notification
 }
 
 if [[ "$1" == "--get" ]]; then
@@ -82,3 +45,5 @@ elif [[ "$1" == "--toggle" ]]; then
 else
   echo $(get_volume)%
 fi
+
+
