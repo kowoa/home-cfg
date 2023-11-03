@@ -5,7 +5,7 @@
 # Do not change shell if inside nix shell. Stick with bash.
 # This solves issue where the nix package doesn't appear in PATH.
 # Start a nix-shell using `nix-shell --command "exec $SHELL"` to retain shell.
-if [[ $IN_NIX_SHELL && $(uname) ]]; then
+if [[ $IN_NIX_SHELL ]]; then
   return
 fi
 
