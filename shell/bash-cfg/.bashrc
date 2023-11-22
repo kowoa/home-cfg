@@ -14,5 +14,6 @@ export VISUAL=hx
 export EDITOR=hx
 
 # IMPORTANT: Edit this to change the desired shell
-exec fish
+#exec fish
+exec zsh
 
