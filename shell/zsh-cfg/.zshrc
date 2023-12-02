@@ -40,8 +40,7 @@ if [[
   ! -v ZELLIJ &&
   $TERM_PROGRAM != "vscode"
 ]]; then
-  # Attach to the oldest session (last in the list)
-  zellij attach --create $(zellij ls | tail -n 1)
+  zellij attach --create
 fi
 
 if command -v pfetch &> /dev/null; then

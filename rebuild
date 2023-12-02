@@ -1,8 +1,8 @@
 #! /usr/bin/env nix-shell
-#! nix-shell -i bash -p home-manager -I nixpkgs=channel:nixos-23.05
+#! nix-shell -i bash -p home-manager -I nixpkgs=channel:nixos-23.11
 
 # NOTE: The version of home-manager here should match the version defined in flake.nix.
-#   This should already be ensured with the `-I nixpkgs=channel:nixos-23.05` flag in the shebang.
+#   This should already be ensured with the `-I nixpkgs=channel:nixos-23.11` flag in the shebang.
 os=$(uname)
 if [ "$os" == "Linux" ]; then
   echo "Rebuilding for Linux ..."
