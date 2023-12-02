@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   home.username = "kodah";
   home.homeDirectory = "/Users/kodah";
-  home.stateVersion = "23.05";
+  home.stateVersion = "23.11";
 
   nix.package = pkgs.nix;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

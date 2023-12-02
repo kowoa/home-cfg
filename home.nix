@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   home.username = "kowoa";
   home.homeDirectory = "/home/kowoa";
-  home.stateVersion = "23.05";
+  home.stateVersion = "23.11";
   targets.genericLinux.enable = true;
 
   nix.package = pkgs.nix;
