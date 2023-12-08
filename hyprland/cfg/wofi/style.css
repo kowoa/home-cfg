@@ -24,8 +24,11 @@ window {
     border: none;
     color: #fff;
     font-weight: bold;
+    /*
     background: linear-gradient(90deg, #cba6f7 0%, #94e2d5 100%);
-   	outline: none;
+    */
+    background: #54546D;
+    outline: none;
     border-radius: 16px;
 }
 
@@ -95,5 +98,8 @@ window {
     margin: 0px;
     border: none;
     border-radius: 16px;
+    /*
     background: linear-gradient(90deg, #cba6f7 0%, #94e2d5 100%);
+    */
+    background: #54546D;
 }
