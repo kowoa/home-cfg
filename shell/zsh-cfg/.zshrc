@@ -11,8 +11,8 @@ if [[ ! -d "$HOME/.zsh_plugins/fast-syntax-highlighting" ]]; then
 fi
 
 # ZSH Plugins
-source "$HOME/.zsh_plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
 source "$HOME/.zsh_plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$HOME/.zsh_plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
 source "$HOME/.zsh_plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 
 # Persist history across sessions
