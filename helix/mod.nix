@@ -9,6 +9,7 @@
     omnisharp-roslyn
     cmake-language-server
     lua-language-server
+    marksman # markdown
     nil # nix
   ];
 
