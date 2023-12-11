@@ -1,11 +1,76 @@
 local wezterm = require("wezterm")
+local harfbuzz_features = {
+  "calt",
+  "liga",
+  "dlig",
+  "ss03",
+  "ss04",
+  "ss06",
+  "ss07",
+};
 
 return {
   font = wezterm.font {
-    family = "CozetteHiDpi",
-    --family = "Cozette",
+    family = "MonaspiceAr NF",
+    harfbuzz_features = harfbuzz_features,
   },
-  font_size = 18,
+  font_rules = {
+    {
+      intensity = "Normal",
+      italic = false,
+      font = wezterm.font {
+        family = "MonaspiceAr NF",
+        weight = "Regular",
+        harfbuzz_features = harfbuzz_features,
+      },
+    },
+    {
+      intensity = "Half",
+      italic = false,
+      font = wezterm.font {
+        family = "MonaspiceKr NF",
+        weight = "Light",
+        harfbuzz_features = harfbuzz_features,
+      },
+    },
+    {
+      intensity = "Bold",
+      italic = false,
+      font = wezterm.font {
+        family = "MonaspiceKr NF",
+        weight = "Bold",
+        harfbuzz_features = harfbuzz_features,
+      },
+    },
+    {
+      intensity = "Normal",
+      italic = true,
+      font = wezterm.font {
+        family = "MonaspiceAr NF",
+        weight = "Regular",
+        harfbuzz_features = harfbuzz_features,
+      },
+    },
+    {
+      intensity = "Half",
+      italic = true,
+      font = wezterm.font {
+        family = "MonaspiceKr NF",
+        weight = "Light",
+        harfbuzz_features = harfbuzz_features,
+      },
+    },
+    {
+      intensity = "Bold",
+      italic = true,
+      font = wezterm.font {
+        family = "MonaspiceKr NF",
+        weight = "Bold",
+        harfbuzz_features = harfbuzz_features,
+      },
+    },
+  },
+  font_size = 11,
 
   -- Cursor
   default_cursor_style = "BlinkingBlock",

@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-#wezterm start -- bash
-kitty
+wezterm start -- bash
+#kitty
