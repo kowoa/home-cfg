@@ -75,7 +75,7 @@ local font_rules = {
   },
 }
 
-local font_size = 11;
+local font_size = 10;
 
 return {
   font = font,
