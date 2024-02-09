@@ -104,6 +104,9 @@
         export PATH="$DIR:$PATH"
       done
 
+      # Rust binaries
+      export PATH="${config.home.homeDirectory}/.cargo/bin:$PATH"
+
       source ${config.xdg.configHome}/bash/.bash_profile
     '';
     ".bashrc".text = ''
@@ -113,6 +116,9 @@
       for DIR in ${config.home.homeDirectory}/bin/*/; do
         export PATH="$DIR:$PATH"
       done
+
+      # Rust binaries
+      export PATH="${config.home.homeDirectory}/.cargo/bin:$PATH"
 
       source ${config.xdg.configHome}/bash/.bashrc
     '';
