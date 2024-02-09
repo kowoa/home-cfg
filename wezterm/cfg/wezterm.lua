@@ -15,7 +15,7 @@ return {
   cursor_blink_rate = 500,
 
   window_background_opacity = 0.95,
-  warn_about_missing_glyphs = true,
+  warn_about_missing_glyphs = false,
   hide_tab_bar_if_only_one_tab = true,
 
   color_scheme = "kanagawabones",
