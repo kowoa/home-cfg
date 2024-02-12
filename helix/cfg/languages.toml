@@ -2,6 +2,10 @@
 name = "rust"
 auto-format = false
 
+[language-server.rust-analyzer.config]
+check = { command = "clippy" }
+completion.callable.snippets = "add_parentheses"
+
 [[language]]
 name = "lua"
 auto-format = true
