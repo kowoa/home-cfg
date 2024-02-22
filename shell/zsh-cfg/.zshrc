@@ -40,7 +40,7 @@ if [[
   ! -v ZELLIJ &&
   $TERM_PROGRAM != "vscode"
 ]]; then
-  zellij attach --create
+  zellij attach --create main
 fi
 
 if command -v pfetch &> /dev/null; then
