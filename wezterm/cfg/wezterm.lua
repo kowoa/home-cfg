@@ -1,11 +1,11 @@
 local wezterm = require("wezterm")
-local fonts = require("fonts")
+local font = require("cozette-font")
 
 return {
 	-- Fonts
-	font = fonts.font,
-	font_rules = fonts.font_rules,
-	font_size = fonts.font_size,
+	font = font.font,
+	font_rules = font.font_rules,
+	font_size = font.font_size,
 
 	-- Cursor
 	default_cursor_style = "BlinkingBlock",
