@@ -6,11 +6,40 @@ local font = wezterm.font({
 
 local font_rules = {
 	{
+		intensity = "Normal",
+		italic = false,
+		font = wezterm.font({
+			family = "Cozette",
+		}),
+	},
+	{
+		intensity = "Half",
+		italic = false,
+		font = wezterm.font({
+			family = "Cozette",
+		}),
+	},
+	{
 		intensity = "Bold",
 		italic = false,
 		font = wezterm.font({
 			family = "CozetteVectorBold",
-			weight = "Bold",
+		}),
+	},
+	{
+		intensity = "Normal",
+		italic = true,
+		font = wezterm.font({
+			family = "CozetteVector",
+			style = "Italic",
+		}),
+	},
+	{
+		intensity = "Half",
+		italic = true,
+		font = wezterm.font({
+			family = "CozetteVector",
+			style = "Italic",
 		}),
 	},
 	{
@@ -18,7 +47,6 @@ local font_rules = {
 		italic = true,
 		font = wezterm.font({
 			family = "CozetteVectorBold",
-			weight = "Bold",
 			style = "Italic",
 		}),
 	},
