@@ -52,7 +52,7 @@ local font_rules = {
 	},
 }
 
-local font_size = 10
+local font_size = 9
 
 return {
 	font = font,
