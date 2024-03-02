@@ -1,5 +1,5 @@
 local wezterm = require("wezterm")
-local font = require("cozette-font")
+local font = require("iosevka-font")
 
 return {
 	-- Fonts
