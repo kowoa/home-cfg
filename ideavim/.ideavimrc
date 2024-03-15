@@ -2,3 +2,18 @@ set number relativenumber
 set idearefactormode=keep
 set ideajoin
 set incsearch
+
+let mapleader = " "
+
+nnoremap <leader><leader> :action GotoFile<CR>
+nnoremap <leader>f :action GotoFile<CR>
+
+nnoremap H :action PreviousTab<CR>
+nnoremap L :action NextTab<CR>
+
+nnoremap ]e :action GotoNextError<CR>
+nnoremap [e :action GotoPreviousError<CR>
+nnoremap ]d :action GotoNextError<CR>
+nnoremap [d :action GotoPreviousError<CR>
+
+nnoremap <leader>ca :action ShowIntentionActions<CR>
