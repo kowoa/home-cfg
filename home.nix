@@ -20,6 +20,7 @@
   programs.home-manager.enable = true;
   programs.git = {
     enable = true;
+    lfs.enable = true;
     userName = "kowoa";
     userEmail = "koadahoakodah@gmail.com";
     extraConfig = {
