@@ -9,6 +9,7 @@
   imports = [
     ./helix/mod.nix
     ./kitty/mod.nix
+    ./wezterm/mod.nix
     ./shell/mod.nix
     ./misc/mod.nix
     ./zellij/mod.nix
