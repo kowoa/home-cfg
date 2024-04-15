@@ -18,9 +18,9 @@ return {
 	warn_about_missing_glyphs = false,
 	hide_tab_bar_if_only_one_tab = true,
 
-	--color_scheme = "kanagawabones",
+	color_scheme = "kanagawabones",
 	--color_scheme = "Catppuccin Mocha",
-	color_scheme = "duskfox",
+	--color_scheme = "duskfox",
 
 	keys = {
 		{
